@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import { getCharacters } from './services/get-characters';
-import CharacterList from './components/CharacterList';
-import Filters from './components/Filters';
+import {getCharacters} from './services/get-characters';
+import Home from './components/Home';
+import CharacterDetail from './components/CharacterDetail';
+import {Switch, Route} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,36 +16,43 @@ class App extends React.Component {
     this.getInputValue = this.getInputValue.bind(this);
   }
 
-componentDidMount () {
-  getCharacters ()
-    .then(data => {
-      this.setState({
-        characters: data.results,
-        inputValue: ''
+  componentDidMount () {
+    getCharacters ()
+      .then(data => {
+        this.setState({
+          characters: data.results,
+          inputValue: ''
+        });
       });
-    });
-} 
+  } 
 
-getInputValue (event) {
-  const inputValue = event.currentTarget.value; 
-  this.setState ({
-    inputValue: inputValue
-  })
-}
+  getInputValue (event) {
+    const inputValue = event.currentTarget.value; 
+    this.setState ({
+      inputValue: inputValue
+    })
+  }
 
   render() {
     return (
       <div className="app">
-        <header className="app__header">
-          <h1 className="app__header-title">Rick and Morty</h1>
-          <Filters getInputValue={this.getInputValue}/>
-        </header>
-        <main className="app__main">
-          <CharacterList 
-            characters={this.state.characters}
-            inputValue={this.state.inputValue}
-          />
-        </main>
+        <Switch>
+          <Route exact path="/" render={() => 
+            <Home 
+              getInputValue={this.getInputValue}
+              characters={this.state.characters}
+              inputValue={this.state.inputValue}
+            />
+          } />
+          <Route path="/character/:characterId" render={routerProps => {
+            return (
+              <CharacterDetail 
+                routerProps={routerProps}
+                characters={this.state.characters}
+              />
+            );
+          }}/>
+        </Switch>
       </div>
     );
   }
