@@ -8,7 +8,7 @@ const CharacterDetail = props => {
   if (clickedCharacter[0]){
     return (
       <React.Fragment>
-        <Link to = '/'><p className="detail__link-back">&lt; Volver</p></Link>
+        <Link to = '/'><p className="detail__back">&lt; Volver</p></Link>
         <div className="detail__wrapper">       
           <img className="detail__img" src={clickedCharacter[0].image} alt={`Imagen de ${clickedCharacter[0].name}`}/>
           <h2 className="detail__name">{clickedCharacter[0].name}</h2>
@@ -20,12 +20,12 @@ const CharacterDetail = props => {
     )
   } else {
     return(
-      <React.Fragment>
-        <Link to="/" className="detail__link-back">
+      <div className="detail__error">
+        <p className="detail__error-msg">No encontramos ese personaje...</p>
+        <Link to="/" className="detail__error-back">
           &lt; Volver a buscar
         </Link>
-        <p className="detail__no-results">Ese personaje no está en nuestra base de datos.</p>
-      </React.Fragment>
+      </div>
     )
   }
  
