@@ -1,6 +1,7 @@
 import React from 'react';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
+import PropTypes from 'prop-types';
 
 class Home extends React.Component {
 
@@ -29,6 +30,12 @@ class Home extends React.Component {
     
   }
 
+}
+
+Home.propTypes = {
+  getInputValue: PropTypes.func.isRequired,
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired,
+  inputValue: PropTypes.string
 }
 
 export default Home;

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import CharacterCard from './CharacterCard';
+import PropTypes from 'prop-types';
 
 class CharacterList extends React.Component {
 
@@ -30,8 +31,14 @@ class CharacterList extends React.Component {
         })}
       </ul>
     );
+
   }
 
+}
+
+CharacterList.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired,
+  inputValue: PropTypes.string
 }
 
 export default CharacterList;

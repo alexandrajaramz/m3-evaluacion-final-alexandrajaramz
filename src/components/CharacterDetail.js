@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 const CharacterDetail = props => {
 
@@ -36,6 +38,11 @@ const CharacterDetail = props => {
     )
   }
  
+}
+
+CharacterDetail.propTypes = {
+  routerProps: PropTypes.objectOf(PropTypes.object).isRequired,
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default CharacterDetail;

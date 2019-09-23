@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class CharacterCard extends React.Component {
 
@@ -17,8 +18,15 @@ class CharacterCard extends React.Component {
         <p className="list__character-species">{characterSpecies}</p>
       </div>
     );
+
   }
 
+}
+
+CharacterCard.propTypes = {
+  characterImage: PropTypes.string.isRequired,
+  characterName: PropTypes.string.isRequired,
+  characterSpecies: PropTypes.string.isRequired
 }
 
 export default CharacterCard;
