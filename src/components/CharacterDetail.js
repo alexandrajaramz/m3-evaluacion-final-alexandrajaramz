@@ -13,6 +13,7 @@ const CharacterDetail = props => {
           <img className="detail__img" src={clickedCharacter[0].image} alt={`Imagen de ${clickedCharacter[0].name}`}/>
           <h2 className="detail__name">{clickedCharacter[0].name}</h2>
           <p className="detail__status">{`Status: ${clickedCharacter[0].status}`}</p>
+          <p className="detail__species">{`Species: ${clickedCharacter[0].species}`}</p>
           <p className="detail__origin">{`Origin: ${clickedCharacter[0].origin.name}`}</p>
           <p className="char__episodes">{`Episodes: ${clickedCharacter[0].episode.length}`}</p>
         </div>
