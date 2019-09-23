@@ -5,7 +5,14 @@ import CharacterCard from './CharacterCard';
 class CharacterList extends React.Component {
 
   render () {
-    const filteredCharacters = this.props.characters.filter(item => item.name.toUpperCase().includes(this.props.inputValue.toUpperCase()));
+
+    const {
+      characters,
+      inputValue
+    } = this.props;
+
+    const filteredCharacters = characters.filter(item => item.name.toUpperCase().includes(inputValue.toUpperCase()));
+    
     return (
       <ul className="app__main-list">
         {filteredCharacters.map((character) => {

@@ -5,20 +5,28 @@ import Filters from './Filters';
 class Home extends React.Component {
 
   render () {
+      
+    const {
+      getInputValue,
+      characters,
+      inputValue
+    } = this.props;
+
     return (
       <React.Fragment>
         <header className="app__header">
           <h1 className="app__header-title">Rick and Morty</h1>
-          <Filters getInputValue={this.props.getInputValue}/>
+          <Filters getInputValue={getInputValue}/>
         </header>
         <main className="app__main">
           <CharacterList 
-            characters={this.props.characters}
-            inputValue={this.props.inputValue}
+            characters={characters}
+            inputValue={inputValue}
           />
         </main>
       </React.Fragment>
     );
+    
   }
 
 }

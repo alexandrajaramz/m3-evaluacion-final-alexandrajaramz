@@ -3,6 +3,11 @@ import React from 'react';
 class Filters extends React.Component {
 
   render () {
+
+    const {
+      getInputValue
+    } = this.props;
+
     return (
       <form className="app__header-form">
         <label htmlFor="search" className="header__form-label">
@@ -13,7 +18,7 @@ class Filters extends React.Component {
             id="search" 
             name="search" 
             className="header__form-input"
-            onChange={this.props.getInputValue}
+            onChange={getInputValue}
         />
       </form>
     );

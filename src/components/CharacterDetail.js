@@ -2,8 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const CharacterDetail = props => {
-  const characterId = parseInt(props.routerProps.match.params.characterId);
-  const clickedCharacter = props.characters.filter(item => {return(item.id === characterId)});
+
+  const {
+    routerProps,
+    characters
+  } = props;
+
+  const characterId = parseInt(routerProps.match.params.characterId);
+  const clickedCharacter = characters.filter(item => {return(item.id === characterId)});
 
   if (clickedCharacter[0]){
     return (
