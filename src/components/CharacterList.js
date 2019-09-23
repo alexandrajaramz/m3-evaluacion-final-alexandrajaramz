@@ -1,4 +1,5 @@
 import React from 'react';
+import CharacterCard from './CharacterCard';
 
 class CharacterList extends React.Component {
 
@@ -8,11 +9,11 @@ class CharacterList extends React.Component {
         {this.props.characters.map((character) => {
           return (
             <li className="list__character" key={character.id}>
-              <div className="list__character-wrapper">
-                <img className="list__character-img" src={character.image} alt={`Imagen de ${character.name}`}/>
-                <h2 className="list__character-name">{character.name}</h2>
-                <p className="list__character-species">{character.species}</p>
-              </div>
+              <CharacterCard 
+                characterImage={character.image}
+                characterName={character.name}
+                characterSpecies={character.species}
+              />
             </li>
           );
         })}
