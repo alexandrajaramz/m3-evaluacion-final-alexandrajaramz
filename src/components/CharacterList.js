@@ -1,4 +1,5 @@
 import React from 'react';
+import './CharacterList.scss';
 import {Link} from 'react-router-dom';
 import CharacterCard from './CharacterCard';
 import PropTypes from 'prop-types';

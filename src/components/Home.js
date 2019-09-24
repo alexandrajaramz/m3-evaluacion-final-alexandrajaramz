@@ -1,4 +1,5 @@
 import React from 'react';
+import './Home.scss';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import PropTypes from 'prop-types';

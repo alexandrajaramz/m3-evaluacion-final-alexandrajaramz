@@ -1,0 +1,21 @@
+.app__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app__header-title {
+  background-image: url(../images/Rick-Morty-logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 320px;
+  height: 1px;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 125px;
+}
+
+.app__main {
+  display: -webkit-inline-box;
+}
