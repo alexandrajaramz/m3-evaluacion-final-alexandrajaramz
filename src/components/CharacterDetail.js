@@ -19,25 +19,28 @@ const CharacterDetail = props => {
     return (
       <React.Fragment>
         <Header />
-        <Link to = '/'><p className="detail__back">&lt; Volver</p></Link>
-        <div className="detail__wrapper">       
-          <img className="detail__img" src={clickedCharacter[0].image} alt={`Imagen de ${clickedCharacter[0].name}`}/>
-          <div className="detail__info">
-            <h2 className="detail__info-name">{clickedCharacter[0].name}</h2>
-            <p className="detail__info-status">{`Status: ${clickedCharacter[0].status}`}</p>
-            <p className="detail__info-species">{`Species: ${clickedCharacter[0].species}`}</p>
-            <p className="detail__info-origin">{`Origin: ${clickedCharacter[0].origin.name}`}</p>
-            <p className="char__info-episodes">{`Episodes: ${clickedCharacter[0].episode.length}`}</p>
+        <section className="detail__section">       
+          <Link className="detail__back" to = '/'><p className="detail__back-p">&lt; Volver</p></Link>
+          <div className="detail__wrapper-content">    
+            <img className="detail__img" src={clickedCharacter[0].image} alt={`Imagen de ${clickedCharacter[0].name}`}/>
+            <div className="detail__info">
+              <h2 className="detail__info-name">{clickedCharacter[0].name}</h2>
+              <p className="detail__info-status info-p">{`Status: ${clickedCharacter[0].status}`}</p>
+              <p className="detail__info-species info-p">{`Species: ${clickedCharacter[0].species}`}</p>
+              <p className="detail__info-origin info-p">{`Origin: ${clickedCharacter[0].origin.name}`}</p>
+              <p className="char__info-episodes info-p">{`Episodes: ${clickedCharacter[0].episode.length}`}</p>
+            </div>
           </div>
-        </div>
+        </section>
       </React.Fragment>
     )
   } else {
     return(
-      <div className="detail__error">
-        <p className="detail__error-msg">No encontramos ese personaje...</p>
-        <Link to="/" className="detail__back">&lt; Volver a buscar</Link>
-      </div>
+      <React.Fragment>
+        <Header />      
+        <p className="detail__back-error">No encontramos ese personaje...</p>
+        <Link to="/" className="detail__back">&lt; Volver</Link>
+      </React.Fragment>
     )
   }
  
