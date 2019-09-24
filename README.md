@@ -1,6 +1,7 @@
 # Evaluación final m3 | Alexandra Jara
 
 <img src="./src/images/Rick-Morty-logo.png" alt="Logo de Rick y Morty" height="200px">
+
 ## Directorio de personajes de Rick y Morty
 
 El ejercicio consiste en desarrollar una página web con un listado de personajes de Rick and Morty, el cual puede ser además filtrado y dispone de vista en detalle de cada personaje. 
