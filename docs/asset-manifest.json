@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "./static/css/main.009f1622.chunk.css",
+    "main.js": "./static/js/main.a3edf791.chunk.js",
+    "main.js.map": "./static/js/main.a3edf791.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.4cbede99.js",
+    "runtime-main.js.map": "./static/js/runtime-main.4cbede99.js.map",
+    "static/js/2.c7703ecf.chunk.js": "./static/js/2.c7703ecf.chunk.js",
+    "static/js/2.c7703ecf.chunk.js.map": "./static/js/2.c7703ecf.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.d34de0076a377b502f1d48f7c96aec80.js": "./precache-manifest.d34de0076a377b502f1d48f7c96aec80.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.009f1622.chunk.css.map": "./static/css/main.009f1622.chunk.css.map",
+    "static/media/Home.scss": "./static/media/Rick-Morty-logo.75509f2e.png"
+  }
+}
