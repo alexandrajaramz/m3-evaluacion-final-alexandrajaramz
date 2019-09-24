@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.scss';
 import CharacterList from './CharacterList';
+import Header from './Header';
 import Filters from './Filters';
 import PropTypes from 'prop-types';
 
@@ -16,10 +17,8 @@ class Home extends React.Component {
 
     return (
       <React.Fragment>
-        <header className="app__header">
-          <h1 className="app__header-title">Rick and Morty</h1>
-          <Filters getInputValue={getInputValue}/>
-        </header>
+        <Header />
+        <Filters getInputValue={getInputValue}/>
         <main className="app__main">
           <CharacterList 
             characters={characters}

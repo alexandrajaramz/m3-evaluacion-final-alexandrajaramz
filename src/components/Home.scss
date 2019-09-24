@@ -17,5 +17,13 @@
 }
 
 .app__main {
-  display: -webkit-inline-box;
+  display: flex;
+  justify-content: center;
 }
+
+@media all and (min-width: 480px) {
+  .app__main {
+    display: block;
+  }
+}
+

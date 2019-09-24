@@ -1,6 +1,12 @@
 .list__character-wrapper {
   background-color: #12afc7;
   padding-bottom: 5px;
+  max-width: 250px;
+}
+
+.list__character-img {
+  width: 100%;
+  max-width: 250px;
 }
 
 .list__character-info {
