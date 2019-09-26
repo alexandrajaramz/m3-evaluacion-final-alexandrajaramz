@@ -12,17 +12,32 @@ class Home extends React.Component {
     const {
       getInputValue,
       characters,
-      inputValue
+      inputValue,
+      getSelectValue,
+      selectValue,
+      getRadiusValue,
+      radiusValue,
+      getEpisodesValue,
+      episodesValue
     } = this.props;
 
     return (
       <React.Fragment>
         <Header />
-        <Filters getInputValue={getInputValue}/>
+        <Filters 
+          getInputValue={getInputValue}
+          getSelectValue={getSelectValue}
+          getRadiusValue={getRadiusValue}
+          radiusValue={radiusValue}
+          getEpisodesValue={getEpisodesValue}
+        />
         <main className="app__main">
           <CharacterList 
             characters={characters}
             inputValue={inputValue}
+            selectValue={selectValue}
+            radiusValue={radiusValue}
+            episodesValue={episodesValue}
           />
         </main>
       </React.Fragment>

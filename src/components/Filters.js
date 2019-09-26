@@ -7,7 +7,11 @@ class Filters extends React.Component {
   render () {
 
     const {
-      getInputValue
+      getInputValue,
+      getSelectValue,
+      getRadiusValue,
+      radiusValue,
+      getEpisodesValue
     } = this.props;
 
     return (
@@ -22,6 +26,79 @@ class Filters extends React.Component {
             className="header__form-input"
             onChange={getInputValue}
         />
+
+        <label htmlFor="episodes">
+          Número de episodios en los que aparece:
+        </label>
+        <input 
+          type="number" 
+          id="episodes" 
+          name="episodes" 
+          onChange={getEpisodesValue}
+        />
+
+        <label htmlFor="origin">Origen:</label>
+        <select id="origin" name="origin" onChange={getSelectValue}>
+        <option value=''>Elige una opción</option>
+          <option value="Earth (C-137)">Earth (C-137)</option>
+          <option value="Earth (Replacement Dimension)">Earth (Replacement Dimension)</option>
+          <option value="Abadango">Abadango</option>
+          <option value="unknown">unknown</option>
+        </select>
+
+        <div>
+          <label htmlFor="gender-1">
+            <input
+              id="gender-1"
+              type="radio"
+              value="Female"
+              name="gender"
+              checked = {radiusValue === 'Female'}
+              onChange = {getRadiusValue}
+            />
+            Femenino
+          </label>
+        </div>
+        <div>
+          <label htmlFor="gender-2">
+            <input
+              id="gender-2"
+              type="radio"
+              value="Male"
+              name="gender"
+              checked = {radiusValue === 'Male'}
+              onChange = {getRadiusValue}
+            />
+            Masculino
+          </label>
+        </div>
+        <div>
+          <label htmlFor="gender-3">
+            <input
+              id="gender-3"
+              type="radio"
+              value="unknown"
+              name="gender"
+              checked = {radiusValue === 'unknown'}
+              onChange = {getRadiusValue}
+            />
+            Desconocido
+          </label>
+        </div>
+        <div>
+          <label htmlFor="gender-4">
+            <input
+              id="gender-4"
+              type="radio"
+              value="All"
+              name="gender"
+              checked = {radiusValue === 'All'}
+              onChange = {getRadiusValue}
+            />
+            Todos
+          </label>
+        </div>
+
       </form>
     );
 

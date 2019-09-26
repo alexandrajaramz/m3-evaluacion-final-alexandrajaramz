@@ -10,18 +10,24 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      characters: []
+      characters: [],
+      inputValue: '',
+      selectValue: '',
+      radiusValue: 'All',
+      episodes: 0
     }
 
     this.getInputValue = this.getInputValue.bind(this);
+    this.getSelectValue = this.getSelectValue.bind(this);
+    this.getRadiusValue = this.getRadiusValue.bind(this);
+    this.getEpisodesValue = this.getEpisodesValue.bind(this);
   }
 
   componentDidMount () {
     getCharacters ()
       .then(data => {
         this.setState({
-          characters: data.results,
-          inputValue: ''
+          characters: data.results
         });
       });
   } 
@@ -33,6 +39,29 @@ class App extends React.Component {
     })
   }
 
+  getSelectValue (event) {
+    const selectValue = event.currentTarget.value; 
+    this.setState ({
+      selectValue: selectValue
+    })
+    console.log(this.state.selectValue);
+  }
+
+  getRadiusValue (event) {
+    const radiusValue = event.currentTarget.value; 
+    this.setState ({
+      radiusValue: radiusValue
+    })
+  }
+
+  getEpisodesValue (event) {
+    const episodesValue = parseInt(event.currentTarget.value);
+    this.setState ({
+      episodesValue: episodesValue
+    })
+  }
+
+
   render() {
     return (
       <div className="app">
@@ -42,6 +71,13 @@ class App extends React.Component {
               getInputValue={this.getInputValue}
               characters={this.state.characters}
               inputValue={this.state.inputValue}
+              getSelectValue={this.getSelectValue}
+              selectValue={this.state.selectValue}
+              getRadiusValue={this.getRadiusValue}
+              radiusValue={this.state.radiusValue}
+              getEpisodesValue={this.getEpisodesValue}
+              episodesValue={this.state.episodesValue}
+
             />
           } />
           <Route path="/character/:characterId" render={routerProps => {
